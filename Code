@@ -1,0 +1,122 @@
+
+byte a = 0b11000011;    //195
+byte b = 0b11001100;    //204
+byte c = 0;
+
+
+
+void setup() {
+  Serial.begin(9600);
+
+  // Bitsel ve AND işlemi
+  c = a & b;
+  Serial.println("Bitsel ve AND islemi");
+  Serial.println(a, BIN);
+  Serial.println(b, BIN);
+  Serial.println(c, BIN);
+  Serial.println();
+
+
+  // Bitsel veya OR işlemi
+  c = a | b;  
+  Serial.println("Bitsel veya OR islemi");
+  Serial.println(a, BIN);
+  Serial.println(b, BIN);
+  Serial.println(c, BIN);
+  Serial.println();
+
+
+  // Bitsel Dışlama XOR işlemi
+  c = a ^ b;
+  Serial.println("Bitsel Dışlama XOR islemi");
+  Serial.println(a, BIN);
+  Serial.println(b, BIN);
+  Serial.println(c, BIN);
+  Serial.println();
+
+
+  // Bitsel degil NOT islemi
+  c = ~ a;
+  Serial.println("Bitsel degil NOT islemi");
+  Serial.println(a, BIN);
+  Serial.println(c, BIN);
+  Serial.println();
+
+
+  // Sola Kaydırma
+  c = b << 1;
+  Serial.println("Sola kaydirma");
+  Serial.println(b, BIN);
+  Serial.println(c, BIN);
+  Serial.println();
+
+
+  // Sağa Kaydırma
+  c = a >> 1;
+  Serial.println("Saga kaydirma");
+  Serial.println(a, BIN);
+  Serial.println(c, BIN);
+  Serial.println();
+
+
+  // 2. biti 1 yapmak
+  Serial.println("2. biti 1 yapmak");
+  c = 0;
+  c = c | 4;
+  Serial.println(c, BIN);
+  Serial.println();
+
+
+  // 3. biti 1 yapmak
+  Serial.println("3. biti 1 yapmak");
+  c = 0x00;
+  c = c | (1 << 3);
+  Serial.println(c, BIN);
+  Serial.println();
+
+
+  // 4. biti 1 yapmak
+  Serial.println("4. biti 1 yapmak");
+  c = 0b00000000;
+  c |= (1 << 4);
+  Serial.println(c, BIN);
+  Serial.println();
+
+
+  // 6. ve 7.  biti 1 yapmak
+  Serial.println("6. ve 7.  biti 1 yapmak");
+  c = 0;
+  c |= (1 << 7) | (1 << 6);
+  Serial.println(c, BIN);
+  Serial.println();
+
+
+
+  // 2. biti 0 yapmak
+  Serial.println("2. biti 0 yapmak");
+  c = 255;
+  c = c & ~4;
+  Serial.println(c, BIN);
+  Serial.println();
+
+
+  // 3. biti 0 yapmak
+  Serial.println("3. biti 0 yapmak");
+  c = 0xFF;
+  c = c & (~(1 << 3));
+  Serial.println(c, BIN);
+  Serial.println();
+
+
+  // 4. biti 0 yapmak
+  Serial.println("4. biti 0 yapmak");
+  c = 0b11111111;
+  c &= (~(1 << 4));
+  Serial.println(c, BIN);
+  Serial.println();
+}
+
+void loop() {
+
+
+}
